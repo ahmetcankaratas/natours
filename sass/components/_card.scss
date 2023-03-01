@@ -117,6 +117,7 @@
         ul {
             list-style: none;
             width: 80%;
+            padding: 0;
             margin: 0 auto;
 
             li {
@@ -160,20 +161,27 @@
 
     @include respond(tab-port){
         height: auto;
+        border-radius: 3px;
+        background-color: $color-white;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
         &__side {
             height: auto;
             position: relative;
-            border-radius: 3px;
+            box-shadow: none;
 
             &--back {
                 transform: rotateY(0);
-                clip-path: polygon(0 15%,);
+                clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
             }
         }
 
         &:hover &__side--front{
             transform: rotateY(0);
+        }
+
+        &__details {
+            padding:1rem 3rem;
         }
 
         // BACK SIDE STYLING
@@ -183,7 +191,7 @@
             left: 0;
             transform: translate(0);
             width: 100%;
-            padding: 4rem;
+            padding: 5rem 0;
         }
 
         &__price-box{
@@ -192,6 +200,7 @@
 
         &__price-value{
             font-size: 6rem;
+            margin: 0;
         }
     }
 }
